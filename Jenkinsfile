@@ -30,7 +30,7 @@ pipeline {
         sh 'node -v && npm --version && (npm ci || npm install)'
       }
     }
-  
+  }  
   post {
     success {
       echo "✅ Tests passed, triggering deployment API..."
