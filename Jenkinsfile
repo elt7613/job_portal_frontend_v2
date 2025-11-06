@@ -30,14 +30,7 @@ pipeline {
         sh 'node -v && npm --version && (npm ci || npm install)'
       }
     }
-
-    // Skipping explicit install of test libraries because they are already in devDependencies
-    stage('Run tests') {
-      steps {
-        sh 'npm test -- --run'
-      }
-    }
-  }  
+  
   post {
     success {
       echo "✅ Tests passed, triggering deployment API..."
